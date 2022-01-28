@@ -2,6 +2,7 @@
   "name": "code_starter_pack_react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://code-starter-pack-python.herokuapp.com/website",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -9,6 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "reactstrap": "^9.0.1",
     "web-vitals": "^2.1.3"
   },
   "scripts": {
