@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
-// import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
-//   FormFeedback, Container, Card, Modal, ModalHeader, ModalBody, Input, FormText
-// } from 'reactstrap';
+
+import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
+  FormFeedback, Container, Card, Modal, ModalHeader, ModalBody, Input, FormText
+} from 'reactstrap';
+// import { LinkContainer } from 'react-router-bootstrap';
 // https://learn.co/lessons/react-container-components
 //https://blog.logrocket.com/react-native-sectionlist-tutorial-examples/
 class App extends React.Component {
@@ -64,14 +66,14 @@ class App extends React.Component {
         return (
         <div className = "App">
           <header className="App-header">
-            <div>
+            {/* <div>
               <h1 id='title'>Code Starter Pack</h1>
               <table id='websites'>
                 <tbody>
                     {this.renderTableData()}
                 </tbody>
               </table>
-            </div>
+            </div> */}
             {/* <div>
               <h1> Fetch data from an api in react </h1>  {
                   items.map((item) => ( 
@@ -83,6 +85,32 @@ class App extends React.Component {
                   ))
               }
             </div> */}
+            <Container >
+              <Col>
+                {this.state.items.map(website => {
+                  return (
+                    <Row key={website.id}
+                        xs={"10"} md={"6"} lg={"4"}
+                        className="mb-4">
+                      <Card className="text-center">
+                        <CardImg src={logo} className="App-logo" alt="logo" />
+                        <CardBody> 
+                          <CardTitle style={{ fontWeight: 'bold' }}>
+                            {website.resource}
+                          </CardTitle>
+                          <CardSubtitle className="mb-2 text-muted">
+                              {website.category}
+                          </CardSubtitle>
+                          <CardText className ="description" >
+                            {website.url}
+                          </CardText>
+                        </CardBody>
+                      </Card>
+                    </Row>
+                  );
+                })}
+              </Col>
+            </Container>
           </header>
 
         </div>
