@@ -96,7 +96,9 @@ class App extends React.Component {
                         xs={"10"} md={"6"} lg={"4"}
                         className="mb-4">
                       <Card className="text-center">
-                        <CardImg src={logo} className="App-logo" alt="logo" />
+                        {/* <CardImg src="https://raw.githubusercontent.com/lazpz61BU/code_starter_pack_python/main/logos/github.com.png" className="App-logo" alt="logo" /> */}
+                        <CardImg src={website.logo}/>
+
                         <CardBody> 
                           <CardTitle style={{ fontWeight: 'bold' }}>
                             {website.resource}
