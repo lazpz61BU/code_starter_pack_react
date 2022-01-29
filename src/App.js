@@ -40,13 +40,15 @@ class App extends React.Component {
     //redners the data in a table
     renderTableData() {
       return this.state.items.map((website, index) => {
-         const { id, category, resource, url } = website //destructuring
+         const { id, category, resource, url, logo } = website //destructuring
          return (
             <tr key={id}>
                <td>{id}</td>
                <td>{category}</td>
                <td>{resource}</td>
                <td>{url}</td>
+               <td>{logo}</td>
+
             </tr>
          )
       })
