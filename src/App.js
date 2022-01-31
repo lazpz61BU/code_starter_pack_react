@@ -2,11 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f0a72275770e0b68971662dcd7eca70f38e1ef73
 
 import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
   FormFeedback, Container, Card,Input, FormText, CardColumns
