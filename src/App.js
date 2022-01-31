@@ -2,11 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
 
-// Test Branching and Merging into Github
-
 
 import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
-  FormFeedback, Container, Card, Modal, ModalHeader, ModalBody, Input, FormText
+  FormFeedback, Container, Card,Input, FormText, CardColumns
 } from 'reactstrap';
 // import { LinkContainer } from 'react-router-bootstrap';
 // https://learn.co/lessons/react-container-components
@@ -65,61 +63,49 @@ class App extends React.Component {
             }
           }
         }
-      
+        const category_json =  {}
+        for(var i in items) {
+          var a = items[i];
+          if(!(a.category in category_json)) {
+              category_json[a.category] = [];
+          }
+          category_json[a.category].push({ category: a.category, id: a.id, logo: a.logo, resource: a.resource, url: a.url });
+        }
+        console.log(category_json)
         return (
-        <div className = "App">
-          <header className="App-header">
-            {/* <div>
-              <h1 id='title'>Code Starter Pack</h1>
-              <table id='websites'>
-                <tbody>
-                    {this.renderTableData()}
-                </tbody>
-              </table>
-            </div> */}
-            {/* <div>
-              <h1> Fetch data from an api in react </h1>  {
-                  items.map((item) => ( 
-                  <ol key = { item.id } >
-                      category: { item.category }, 
-                      resource: { item.resource }, 
-                      url: { item.url } 
-                      </ol>
-                  ))
-              }
-            </div> */}
-            <Container >
-              <Col>
-                {this.state.items.map(website => {
+          <div className = "App" >
+            {/* <header className="App-header"> */}
+              <Container fluid>
+                {Object.keys(category_json).map(category => {
                   return (
-                    <Row key={website.id}
-                        xs={"10"} md={"6"} lg={"4"}
-                        className="mb-4">
-                      <Card className="text-center">
-                        {/* <CardImg src="https://raw.githubusercontent.com/lazpz61BU/code_starter_pack_python/main/logos/github.com.png" className="App-logo" alt="logo" /> */}
-                        <CardImg src={website.logo}/>
-
-                        <CardBody> 
-                          <CardTitle style={{ fontWeight: 'bold' }}>
-                            {website.resource}
-                          </CardTitle>
-                          <CardSubtitle className="mb-2 text-muted">
-                              {website.category}
-                          </CardSubtitle>
-                          <CardText className ="description" >
-                            {website.url}
-                          </CardText>
-                        </CardBody>
-                      </Card>
+                    <Row key ={category}>
+                    
+                      {category_json[category].map(website => {
+                      return (
+                        <Col key={website.id} lg={3} md ={3} xs={3} >
+                          <Card className="card-style">
+                            <CardImg src={website.logo} className="image"/>
+                            <CardBody>
+                              <CardTitle style={{ fontWeight: 'bold' }}>
+                                {website.resource}
+                              </CardTitle>
+                              <CardSubtitle>
+                                {website.category}
+                              </CardSubtitle>
+                              <Button variant="primary" href={website.url}>Visit</Button>
+                            </CardBody>
+                          </Card>
+                        </Col>
+                      )
+                      })}
                     </Row>
                   );
                 })}
-              </Col>
-            </Container>
-          </header>
+              </Container>
+            {/* </header  > */}
+          </div>
+      );
 
-        </div>
-    );
 }
 }
    
