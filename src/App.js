@@ -74,24 +74,21 @@ class App extends React.Component {
         console.log(category_json)
         return (
           <div className = "App" >
-            {/* <header className="App-header"> */}
-              <Container fluid>
+            <header className="App-header">
+              <Container >
                 {Object.keys(category_json).map(category => {
                   return (
                     <Row key ={category}>
                       <h1>{category}</h1>
                       {category_json[category].map(website => {
                       return (
-                        <Col key={website.id} lg={3} md ={3} xs={3} >
-                          <Card className="card-style">
+                        <Col key={website.id}>
+                          <Card className="bg-dark" >
                             <CardImg src={website.logo} className="image"/>
                             <CardBody>
                               <CardTitle style={{ fontWeight: 'bold' }}>
                                 {website.resource}
                               </CardTitle>
-                              <CardSubtitle>
-                                {website.category}
-                              </CardSubtitle>
                               <Button variant="primary" href={website.url}>Visit</Button>
                             </CardBody>
                           </Card>
@@ -102,7 +99,7 @@ class App extends React.Component {
                   );
                 })}
               </Container>
-            {/* </header  > */}
+            </header  >
           </div>
       );
 
