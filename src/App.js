@@ -79,7 +79,7 @@ class App extends React.Component {
                 {Object.keys(category_json).map(category => {
                   return (
                     <Row key ={category}>
-                    
+                      <h1>{category}</h1>
                       {category_json[category].map(website => {
                       return (
                         <Col key={website.id} lg={3} md ={3} xs={3} >
