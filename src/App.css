@@ -14,7 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #0a244d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +23,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 325px;
+  padding: 10%
+}
+.card-style {
+  width: 100%;
+
+  background-position: center;
+  align-items: center;
+  text-align: center;
 }
 
 .App-link {
@@ -36,3 +50,4 @@
     transform: rotate(360deg);
   }
 }
+
