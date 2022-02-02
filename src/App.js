@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
+import Header from './header.js';
 
 
 
@@ -78,6 +79,7 @@ class App extends React.Component {
         console.log(category_json)
         return (
           <div className = "App" >
+            <Header />
             <header className="App-header">
               <Container >
                 {Object.keys(category_json).map(category => {
