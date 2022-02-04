@@ -1,7 +1,9 @@
 .App {
   text-align: center;
+  font-family: 'Courier New', 'Lucida Console', 'Monaco';
+  font-style: normal;
+  font-weight: bold;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,29 +17,33 @@
 
 .App-header {
   /* background-color: #282c34; */
-  background-color: #0a244d;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 .image {
-  object-fit: cover;
-  width: 100%;
-  height: 400px;
+  object-fit:scale-down;
+  height: 65%;
+  width: 65%;
+  margin-top: 30px;
   padding: 5%
 }
 .card-style {
-  width: 100%;
-
+  /* background-color: #ffffff; */
+  /* border: black; */
+  border-width: medium;
   background-position: center;
   align-items: center;
   text-align: center;
 }
-
+.header-style {
+  padding: 65px;
+}
 .App-link {
   color: #61dafb;
 }

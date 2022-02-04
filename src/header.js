@@ -1,16 +1,27 @@
 import React from 'react'
 // import App from './App.js'
 import './header.css';
-
+import {Container} from 'reactstrap'
+const ColoredLine = ({ color }) => (
+   <hr
+     style={{
+       color,
+       backgroundColor: color,
+       height: 5
+     }}
+   />
+ );
 
 export default function Header(props) {
+
    return (
-     <div className='site-header'>
-         <div className='brandName'>
-         <div>Code Starter Pack</div>
-         {/* placeholder for dropdown box */}
-         </div>
-        <img src="CodeStarterPack.png"/>
-     </div>
+
+     <Container className="header" >
+         <h1 > 
+            <img src="LogoNoWords.png" style={{paddingRight: '15px'}}/>   
+            Code Starter Pack
+            <ColoredLine color= "black" />
+         </h1>
+     </Container>
    )
 }

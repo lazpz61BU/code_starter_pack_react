@@ -2,16 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
 import Header from './header.js';
-
-
-
-
 import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
-  FormFeedback, Container, Card,Input, FormText, CardColumns
+  FormFeedback, Container, Card,Input, FormText, CardColumns, CardHeader
 } from 'reactstrap';
-// import { LinkContainer } from 'react-router-bootstrap';
-// https://learn.co/lessons/react-container-components
-//https://blog.logrocket.com/react-native-sectionlist-tutorial-examples/
 class App extends React.Component {
    
     // Constructor 
@@ -58,7 +51,7 @@ class App extends React.Component {
     render() {
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div> ;
+            <h1> Pleases wait some time.... </h1> </div> ;
         //getting all the categories
         const categories = new Set()
         for(var website in items) {
@@ -80,23 +73,24 @@ class App extends React.Component {
         return (
           <div className = "App" >
             <header className="App-header">
+
              <Header resources={category_json}/>
+
+              <Header/>
+ 
               <Container >
                 {Object.keys(category_json).map(category => {
                   return (
                     <Row key ={category}>
-                      <h1>{category}</h1>
+                      <h1 className="header-style" style={{ fontWeight: 'bold' }}>{category}</h1>
                       {category_json[category].map(website => {
                       return (
-                        <Col key={website.id}>
-                          <Card className="bg-dark" >
-                            <CardImg src={website.logo} className="image"/>
-                            <CardBody>
-                              <CardTitle style={{ fontWeight: 'bold' }}>
-                                {website.resource}
-                              </CardTitle>
-                              <Button variant="primary" href={website.url}>Visit</Button>
-                            </CardBody>
+                        <Col key={website.id} >
+                          <Card className="bg-light" style={{maxHeight: '400px'}}>
+                            <CardHeader style={{ fontWeight: 'bold' }}> {website.resource}</CardHeader>
+                            <a href={website.url}>
+                              <CardImg src={website.logo} className="image" alt="Card image"/>
+                            </a>
                           </Card>
                         </Col>
                       )
