@@ -1,4 +1,5 @@
 import React from 'react'
+// import App from './App.js'
 import './header.css';
 import {Container} from 'reactstrap'
 const ColoredLine = ({ color }) => (
@@ -14,6 +15,7 @@ const ColoredLine = ({ color }) => (
 export default function Header(props) {
 
    return (
+
      <Container className="header" >
          <h1 > 
             <img src="LogoNoWords.png" style={{paddingRight: '15px'}}/>   

@@ -73,7 +73,11 @@ class App extends React.Component {
         return (
           <div className = "App" >
             <header className="App-header">
+
+             <Header resources={category_json}/>
+
               <Header/>
+ 
               <Container >
                 {Object.keys(category_json).map(category => {
                   return (
