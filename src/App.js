@@ -79,8 +79,8 @@ class App extends React.Component {
         console.log(category_json)
         return (
           <div className = "App" >
-            <Header />
             <header className="App-header">
+             <Header resources={category_json}/>
               <Container >
                 {Object.keys(category_json).map(category => {
                   return (
