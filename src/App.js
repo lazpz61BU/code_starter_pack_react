@@ -73,6 +73,7 @@ class App extends React.Component {
         return (
           <div className = "App" >
             <header className="App-header">
+              <Header/>
               <Container >
                 {Object.keys(category_json).map(category => {
                   return (
@@ -81,7 +82,7 @@ class App extends React.Component {
                       {category_json[category].map(website => {
                       return (
                         <Col key={website.id} >
-                          <Card className="bg-light">
+                          <Card className="bg-light" style={{maxHeight: '400px'}}>
                             <CardHeader style={{ fontWeight: 'bold' }}> {website.resource}</CardHeader>
                             <a href={website.url}>
                               <CardImg src={website.logo} className="image" alt="Card image"/>
