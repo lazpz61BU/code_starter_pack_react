@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { Component } from "react";
+import React from "react";
 import Header from './header.js';
-import {Button, Row, Col, CardImg, CardTitle, CardSubtitle, CardText, CardBody,
-  FormFeedback, Container, Card,Input, FormText, CardColumns, CardHeader
+import { Row, Col, CardImg, 
+  Container, Card, CardHeader
 } from 'reactstrap';
 class App extends React.Component {
    
@@ -31,7 +30,7 @@ class App extends React.Component {
                 });
             })
     }
-    //redners the data in a table
+    //renders the data in a table
     renderTableData() {
       return this.state.items.map((website, index) => {
          const { id, category, resource, url, logo } = website //destructuring
@@ -51,7 +50,7 @@ class App extends React.Component {
     render() {
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded) return <div>
-            <h1> Pleases wait some time.... </h1> </div> ;
+            <h1> Please wait some time.... </h1> </div> ;
         //getting all the categories
         const categories = new Set()
         for(var website in items) {
@@ -74,24 +73,24 @@ class App extends React.Component {
           <div className = "App" >
             <header className="App-header">
 
-             <Header resources={category_json}/>
+             {/* <Header resources={category_json}/> */}
 
               <Header/>
- 
               <Container >
                 {Object.keys(category_json).map(category => {
                   return (
-                    <Row key ={category}>
+                    <Row key ={category} style = {{paddingTop: '70px', paddingBottom: '70px'}}>
                       <h1 className="header-style" style={{ fontWeight: 'bold' }}>{category}</h1>
                       {category_json[category].map(website => {
                       return (
                         <Col key={website.id} >
-                          <Card className="bg-light" style={{maxHeight: '400px'}}>
-                            <CardHeader style={{ fontWeight: 'bold' }}> {website.resource}</CardHeader>
-                            <a href={website.url}>
-                              <CardImg src={website.logo} className="image" alt="Card image"/>
-                            </a>
-                          </Card>
+                          <a style= {{color: 'Black', fontWeigt: 'bold', textDecorationLine: 'none'}} href={website.url} >
+                            <Card style={{  justifyContent: 'center', 
+                              backgroundColor: 'rgba(165,157,160,0.2)'}} >
+                              <CardHeader style={{ fontWeight: 'bold' }}> {website.resource}</CardHeader>
+                                <CardImg src={website.logo} className="image" alt="Card image"/>
+                            </Card>
+                          </a>
                         </Col>
                       )
                       })}
@@ -102,7 +101,6 @@ class App extends React.Component {
             </header  >
           </div>
       );
-
 }
 }
    
