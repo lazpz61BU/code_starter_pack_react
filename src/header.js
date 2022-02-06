@@ -1,6 +1,6 @@
 import React from 'react'
-// import App from './App.js'
 import './header.css';
+
 import {Container} from 'reactstrap'
 const ColoredLine = ({ color }) => (
    <hr
