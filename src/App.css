@@ -3,6 +3,8 @@
   font-family: 'Courier New', 'Lucida Console', 'Monaco';
   font-style: normal;
   font-weight: bold;
+  background-color: rgba(224,220,112,0.1); 
+
 }
 .App-logo {
   height: 40vmin;
@@ -17,7 +19,7 @@
 
 .App-header {
   /* background-color: #282c34; */
-  background-color: #ffffff;
+  /* background-color: #e0ec70; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,10 +30,13 @@
 }
 .image {
   object-fit:scale-down;
-  height: 65%;
-  width: 65%;
-  margin-top: 30px;
-  padding: 5%
+  height: 70%;
+  width: 70%;
+  /* margin-top: 30px; */
+  padding: 5%;
+  padding-top: 5%;
+  /* text-align: center;
+  justify-content: space-evenly; */
 }
 .card-style {
   /* background-color: #ffffff; */
@@ -40,9 +45,12 @@
   background-position: center;
   align-items: center;
   text-align: center;
+  background-color: rgba(146,224,208,0.45); 
 }
 .header-style {
-  padding: 65px;
+  /* padding: 70px; */
+  padding-bottom: 50px;
+  font-size: calc(47px + 2vmin);
 }
 .App-link {
   color: #61dafb;

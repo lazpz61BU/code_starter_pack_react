@@ -1,32 +1,32 @@
 /* .site-header { */
-  /* background-color: #0a244d; */
+/* background-color: #0a244d; */
 
-  /* color: #000000; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
+/* color: #000000; */
+/* display: flex; */
+/* flex-direction: column; */
+/* align-items: center; */
 
-  /* border-bottom: 20px solid #d4af37; */
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100 */
-  /* background: #fefcea; Old browsers */
-  /* background: -moz-radial-gradient( */
-    /* center, */
-    /* ellipse cover, */
-    /* #fefcea 0%, */
-    /* #f1da36 100% */
-  /* ); FF3.6-15 */
-  /* background: -webkit-radial-gradient( */
-    /* center, */
-    /* ellipse cover, */
-    /* #fefcea 0%, */
-    /* #f1da36 100% */
-  /* ); Chrome10-25,Safari5.1-6 */
-  /* background: radial-gradient( */
-    /* ellipse at center,/ */
-    /* #fefcea 0%, */
-    /* #f1da36 100% */
-  /* ); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); IE6-9 fallback on horizontal gradient */
+/* border-bottom: 20px solid #d4af37; */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100 */
+/* background: #fefcea; Old browsers */
+/* background: -moz-radial-gradient( */
+/* center, */
+/* ellipse cover, */
+/* #fefcea 0%, */
+/* #f1da36 100% */
+/* ); FF3.6-15 */
+/* background: -webkit-radial-gradient( */
+/* center, */
+/* ellipse cover, */
+/* #fefcea 0%, */
+/* #f1da36 100% */
+/* ); Chrome10-25,Safari5.1-6 */
+/* background: radial-gradient( */
+/* ellipse at center,/ */
+/* #fefcea 0%, */
+/* #f1da36 100% */
+/* ); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); IE6-9 fallback on horizontal gradient */
 /* } */
 img {
   width: 55px;
@@ -48,10 +48,18 @@ img {
 .header {
   /* background-color: #000000; */
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   /* position: relative; */
   /* text-align: left; */
   padding: 50px;
   left: 50%;
 }
-  
+#dropdown-basic-button {
+  background-color: rgba(165, 157, 160, 0.2);
+  color: black;
+  font-family: "Courier New", "Lucida Console", "Monaco";
+  font-size: calc(5px + 2vmin);
+  border-color: rgba(165, 157, 160, 0.2);
+}
