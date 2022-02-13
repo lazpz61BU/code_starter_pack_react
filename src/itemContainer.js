@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, CardImg, 
-    Container, Card, CardHeader
-  } from 'reactstrap';
+import {
+  Row, Col, CardImg,
+  Container, Card, CardHeader
+} from 'reactstrap';
 import './App.css';
 
-  
 
-export default function ItemContainer({selected,category_json}) {
-const [itemCategory, setItemCategory] = useState({})
-  useEffect(()=> {
-      if(category_json){
-    
-      if(selected ){ 
-          const filterCategories =  {[selected]: category_json[selected]}
-          setItemCategory(filterCategories)
-      } else{
-          setItemCategory(category_json)
+
+export default function ItemContainer({ selected, category_json }) {
+  const [itemCategory, setItemCategory] = useState({})
+  useEffect(() => {
+    if (category_json) {
+
+      if (!selected || selected === "Filter by Category") {
+        setItemCategory(category_json)
+      } else {
+        const filterCategories = { [selected]: category_json[selected] }
+        setItemCategory(filterCategories)
       }
     }
-  },[selected,category_json]);
+  }, [selected, category_json]);
 
-  
-  
+
+
   return (
-       
-
            <Container id="Container">
                 
                 {Object.keys(itemCategory).map(category => {
