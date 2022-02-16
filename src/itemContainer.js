@@ -34,7 +34,7 @@ export default function ItemContainer({ selected, category_json }) {
                       {itemCategory[category].map(website => {
                       return (
                         <Col key={website.id} s={1}>
-                          <a style= {{color: 'Black', fontWeigt: 'bold', textDecorationLine: 'none'}} href={website.url} target="_blank" >
+                          <a style= {{color: 'Black', fontWeigt: 'bold', textDecorationLine: 'none'}} href={website.url} target="_blank" rel="noreferrer">
                             <Card style={{  justifyContent: 'center', 
                               backgroundColor: 'rgba(165,157,160,0.2)'}} >
                               <CardHeader style={{ fontWeight: 'bold' }}> {website.resource}</CardHeader>
